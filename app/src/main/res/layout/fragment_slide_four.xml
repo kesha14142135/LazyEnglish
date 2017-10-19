@@ -1,0 +1,93 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.klg.lazyenglish.ui.welcome.fragment.SlideFourFragment">
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_line_horizontal"
+        style="@style/GuidelineWelcome"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_line_vertical_image"
+        style="@style/GuidelineWelcome"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_line_horizontal_image"
+        style="@style/GuidelineWelcome"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <RelativeLayout
+        style="@style/RelativeLayoutFont"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_view_emma"
+        style="@style/ImageViewEmma"
+        android:src="@drawable/emma"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_horizontal_image"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guide_line_vertical_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_view_beach"
+        style="@style/BaseWelcome"
+        android:src="@drawable/beach"
+        app:layout_constraintBottom_toBottomOf="@id/guide_line_horizontal"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@id/image_view_emma"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_word"
+        style="@style/CardViewWordSwipe"
+        android:layout_marginRight="@dimen/margin_right_card_word"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/elevation_large"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.5"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/guide_line_vertical_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_emma" />
+
+    <ImageView
+        android:id="@+id/image_view_finger"
+        style="@style/ImageViewFinger"
+        android:elevation="@dimen/elevation_large"
+        android:rotation="-20"
+        android:src="@drawable/arm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.5"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/guide_line_vertical_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_emma"
+        tools:targetApi="lollipop" />
+
+    <TextView
+        style="@style/TextViewDescriptionRight"
+        android:text="@string/splash_four"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/card_view_word"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_emma" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_dot_active">
+        <item>@color/dot_active_screen1</item>
+        <item>@color/dot_active_screen2</item>
+        <item>@color/dot_active_screen3</item>
+        <item>@color/dot_active_screen2</item>
+        <item>@color/dot_active_screen1</item>
+    </string-array>
+    <string-array name="array_dot_inactive">
+        <item>@color/dot_inactive_screen1</item>
+        <item>@color/dot_inactive_screen2</item>
+        <item>@color/dot_inactive_screen3</item>
+        <item>@color/dot_inactive_screen2</item>
+        <item>@color/dot_inactive_screen1</item>
+    </string-array>
+    <string-array name="array_word">
+        <item>@color/word_sport</item>
+        <item>@color/word_house</item>
+        <item>@color/word_animal</item>
+        <item>@color/word_work</item>
+    </string-array>
+</resources>

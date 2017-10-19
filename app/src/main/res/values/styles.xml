@@ -1,0 +1,134 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
+    <style name="TextViewWord">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <style name="TextViewWordTranslate">
+        <item name="android:layout_width">@dimen/image_view_size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <style name="TextViewSetting">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/text_size_word</item>
+        <item name="android:textColor">@color/colorSettingText</item>
+        <item name="android:textSize">@dimen/button_size</item>
+    </style>
+
+    <style name="DefaultNumberPickerTheme" parent="AppTheme">
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="android:divider">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <!-- Welcome screen -->
+    <style name="GuidelineWelcome" parent="AppTheme">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="BaseWelcome" parent="AppTheme">
+        <item name="android:layout_width">@dimen/width_base</item>
+        <item name="android:layout_height">@dimen/height_base</item>
+    </style>
+
+    <style name="RelativeLayoutFont" parent="BaseWelcome">
+        <item name="android:background">@color/colorFontWelcome</item>
+    </style>
+
+    <style name="ImageViewEmma" parent="BaseWelcome">
+        <item name="android:layout_margin">@dimen/margin_emma</item>
+    </style>
+
+    <style name="ImageViewMind" parent="BaseWelcome">
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_marginEnd">@dimen/margin_end_mind</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_mind</item>
+    </style>
+
+    <style name="ImageViewLondon" parent="BaseWelcome">
+        <item name="android:layout_marginBottom">@dimen/margin_bottom_london</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_london</item>
+    </style>
+
+    <style name="TextViewWelcomeWord" parent="BaseWelcome">
+        <item name="android:layout_margin">@dimen/margin_text</item>
+    </style>
+
+    <style name="CardViewWord" parent="BaseWelcome">
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/margin_card_word</item>
+    </style>
+
+    <style name="TextViewDescription" parent="BaseWelcome">
+        <item name="android:layout_marginBottom">@dimen/margin_bottom_description</item>
+        <item name="android:layout_marginTop">@dimen/margin_end_description</item>
+        <item name="android:layout_marginEnd">@dimen/margin_start_description</item>
+        <item name="android:layout_marginStart">@dimen/margin_top_description</item>
+    </style>
+
+    <style name="ImageViewDog" parent="BaseWelcome">
+        <item name="android:layout_margin">@dimen/margin_dog</item>
+    </style>
+
+    <style name="CardViewWordSwipe" parent="BaseWelcome">
+        <item name="android:layout_marginBottom">@dimen/margin_bottom_card_swipe</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_card_swipe</item>
+    </style>
+
+    <style name="ImageViewFinger" parent="BaseWelcome">
+        <item name="android:layout_marginBottom">@dimen/margin_bottom_finger</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_finger</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="TextViewDescriptionRight" parent="BaseWelcome">
+        <item name="android:layout_marginBottom">@dimen/margin_bottom_description_right</item>
+        <item name="android:layout_marginTop">@dimen/margin_end_description_right</item>
+        <item name="android:layout_marginEnd">@dimen/margin_start_description_right</item>
+        <item name="android:layout_marginStart">@dimen/margin_top_description_right</item>
+    </style>
+
+    <style name="TextViewDescriptionCenter" parent="BaseWelcome">
+        <item name="android:layout_marginBottom">@dimen/margin_bottom_desc_center</item>
+        <item name="android:layout_marginLeft">@dimen/margin_left_desc_center</item>
+        <item name="android:layout_marginRight">@dimen/margin_right_desc_center</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_desc_center</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="ImageViewFlag" parent="BaseWelcome">
+        <item name="android:layout_marginBottom">@dimen/margin_bottom_flag</item>
+        <item name="android:rotation">@dimen/rotation_flag</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <color name="colorSettingText">#00eedb</color>
+</resources>

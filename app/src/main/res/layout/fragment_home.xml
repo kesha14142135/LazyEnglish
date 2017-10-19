@@ -1,0 +1,100 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    tools:context="com.klg.lazyenglish.ui.home.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_layout_height_home">
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_settings" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:clipChildren="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linear_layout_new_word"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_repeat_new_word"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/learn_rus_word"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/button_repeat_new_word_rus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/learn_eng_words"
+                    android:layout_weight="1"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_below="@+id/linear_layout_new_word"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_repeat_word"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/learn_rus_word"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/button_repeat_word_rus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/learn_eng_words"
+                    android:layout_weight="1"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.yuyakaido.android.cardstackview.CardStackView
+            android:id="@+id/activity_main_card_stack_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:clipToPadding="false"
+            android:paddingBottom="32dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="32dp"
+            app:elevationEnabled="true"
+            app:scaleDiff="0.02"
+            app:stackFrom="top"
+            app:swipeDirection="horizontal"
+            app:swipeEnabled="true"
+            app:swipeThreshold="0.75"
+            app:translationDiff="12"
+            app:visibleCount="3" />
+    </RelativeLayout>
+</FrameLayout>
