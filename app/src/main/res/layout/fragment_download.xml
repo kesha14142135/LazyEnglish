@@ -4,6 +4,7 @@
     android:id="@+id/constraint_layout_download"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     tools:context="com.klg.lazyenglish.ui.settings.download.DownloadFragment">
 
 
@@ -12,6 +13,13 @@
         style="@style/GuidelineWelcome"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_line_horizontal_top"
+        style="@style/GuidelineWelcome"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
 
     <android.support.constraint.Guideline
         android:id="@+id/guide_line_vertical_image"
@@ -26,6 +34,7 @@
         app:layout_constraintGuide_percent="0.65" />
 
     <RelativeLayout
+        android:id="@+id/relative_layout_font"
         style="@style/BaseWelcome"
         android:background="@color/colorFontWelcome"
         app:layout_constraintBottom_toTopOf="@+id/guide_line_horizontal"
@@ -34,9 +43,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
-        android:id="@+id/relative_layout_font"
+        android:id="@+id/relative_layout_font_bottom"
         style="@style/BaseWelcome"
         android:background="@color/colorFontWelcome"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -73,20 +83,20 @@
 
     <TextView
         style="@style/TextViewDescriptionCenter"
-        android:text="@string/screen_download"
+        android:text="@string/screen_download_title"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:textColor="@color/colorTextSetting"
         app:layout_constraintTop_toBottomOf="@+id/guide_line_horizontal_image" />
 
     <Button
         android:id="@+id/button_repeat_download"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorFontWelcome"
+        android:background="@color/colorWhite"
         android:text="@string/restart_download"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorFontWelcome"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintRight_toLeftOf="parent" />

@@ -13,25 +13,14 @@
 
     <Button
         android:id="@+id/button_next"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        style="@style/ButtonMenuWelcome"
         android:layout_alignParentEnd="true"
-        android:background="@null"
-        android:text="@string/next"
-        android:textSize="10sp"
-        android:textColor="@color/colorText"  />
+        android:text="@string/next" />
 
     <Button
         android:id="@+id/button_skip"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="@null"
-        android:text="@string/skip"
-        android:textSize="10sp"
-        android:textColor="@color/colorText" />
+        style="@style/ButtonMenuWelcome"
+        android:text="@string/skip" />
 
     <RelativeLayout
         android:id="@+id/layoutDots"
@@ -46,9 +35,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            app:indicatorActiveColor="@color/colorPageIndicator"
+            app:indicatorActiveColor="@color/colorFontWelcome"
             app:indicatorInactiveColor="@color/colorPageIndicatorHint"
-            app:indicatorPadding="10dp"
-            app:indicatorRadius="4dp" />
+            app:indicatorPadding="@dimen/page_indicator_padding"
+            app:indicatorRadius="@dimen/page_indicator_radius" />
     </RelativeLayout>
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 
 import com.klg.lazyenglish.data.constant.ManagerConstants;
 import com.klg.lazyenglish.data.model.Answer;
+import com.klg.lazyenglish.data.model.Level;
 import com.klg.lazyenglish.data.model.Word;
 import com.klg.lazyenglish.data.source.api.ApiAppHelper;
 import com.klg.lazyenglish.data.source.database.DbAppHelper;
@@ -89,10 +90,15 @@ public class AppDataManager implements DataManager {
                 .subscribe(
                         words -> {
                             mDbHelper.addWords(words);
-                           // mPrefHelper.setStepSettings(1);
+                            mPrefHelper.setStepSettings(1);
                             callback.onSuccess();
                         },
                         error -> callback.onFailure());
+    }
+
+    @Override
+    public int getCountShowVideo() {
+        return 11;
     }
 
     private List<Word> getWords(Answer<Word> wordAnswer) {
@@ -108,5 +114,16 @@ public class AppDataManager implements DataManager {
     @Override
     public int getDownloadWords() {
         return 0;
+    }
+
+    @Override
+    public List<Level> getLevelsFromDb() {
+        List<Level> levels = new ArrayList<>();
+        levels.add(new Level(0, "Base", 300, 2, 0));
+        levels.add(new Level(1, "Pre intermediate", 1000, 0, 3));
+        levels.add(new Level(2, "Intermediate", 1500, 0, 13));
+        levels.add(new Level(3, "Upper intermediate", 500, 0, 28));
+        levels.add(new Level(4, "Advance", 500, 0, 33));
+        return levels;
     }
 }

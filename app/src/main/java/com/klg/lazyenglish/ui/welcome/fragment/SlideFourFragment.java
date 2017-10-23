@@ -13,12 +13,17 @@ import android.widget.ImageView;
 
 import com.klg.lazyenglish.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class SlideFourFragment extends Fragment {
 
-    //ui
-    private ImageView mImageViewFinger;
-    private ImageView mImageViewBeach;
-    //element
+    //ui element
+    @BindView(R.id.image_view_finger)
+    ImageView mImageViewFinger;
+    @BindView(R.id.image_view_beach)
+    ImageView mImageViewBeach;
+    //component
     private Context mContext;
     private Animation mAnimation;
     private Animation mAnimationBeach;
@@ -31,10 +36,12 @@ public class SlideFourFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
-            mAnimationBeach = AnimationUtils.loadAnimation(mContext,
-                    R.anim.anim_image_visible_next_screen);
-            mAnimation = AnimationUtils.loadAnimation(mContext,
-                    R.anim.anim_image_move_right);
+            if (mAnimationBeach == null || mAnimation == null) {
+                mAnimationBeach = AnimationUtils.loadAnimation(mContext,
+                        R.anim.anim_image_visible_next_screen);
+                mAnimation = AnimationUtils.loadAnimation(mContext,
+                        R.anim.anim_image_move_right);
+            }
             mImageViewBeach.setVisibility(View.VISIBLE);
             mImageViewFinger.startAnimation(mAnimation);
             mImageViewBeach.startAnimation(mAnimationBeach);
@@ -50,8 +57,7 @@ public class SlideFourFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_slide_four, container, false);
-        mImageViewFinger = view.findViewById(R.id.image_view_finger);
-        mImageViewBeach = view.findViewById(R.id.image_view_beach);
+        ButterKnife.bind(this, view);
         mImageViewBeach.setVisibility(View.INVISIBLE);
         return view;
     }
@@ -59,9 +65,10 @@ public class SlideFourFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        if (mAnimation != null) {
-            mAnimation.cancel();
-            mAnimationBeach.cancel();
+        if (mImageViewBeach.getAnimation() != null &&
+                mImageViewFinger.getAnimation() != null) {
+            mImageViewFinger.clearAnimation();
+            mImageViewBeach.clearAnimation();
         }
     }
 

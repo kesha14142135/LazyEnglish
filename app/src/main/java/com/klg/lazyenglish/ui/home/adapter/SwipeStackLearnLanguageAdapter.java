@@ -49,7 +49,7 @@ public class SwipeStackLearnLanguageAdapter extends ArrayAdapter<Word> {
                 mColors[word.getType()]);
         holder.mTextViewWord.setText(word.getWordEng());
         holder.mTextViewTranscription.setText(word.getDescription());
-        holder.mTextViewHint.setText(mContext.getString(R.string.translate));
+        holder.mTextViewHint.setText(mContext.getString(R.string.welcome_translate_word));
         holder.mImageViewHint.setImageBitmap(null);
         holder.mButtonShowHintImage.setVisibility(View.VISIBLE);
         holder.mTextViewHint.setOnClickListener(view ->

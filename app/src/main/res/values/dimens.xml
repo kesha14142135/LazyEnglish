@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="padding_swipestack">10dp</dimen>
+    <dimen name="padding_swipe_stack">10dp</dimen>
     <dimen name="card_corner_radius">5dp</dimen>
     <dimen name="elevation_large">5dp</dimen>
 
@@ -43,7 +43,7 @@
     <dimen name="margin_top_mind">10dp</dimen>
     <dimen name="margin_bottom_london">60dp</dimen>
     <dimen name="margin_top_london">20dp</dimen>
-    <dimen name="margin_text">10dp</dimen>
+    <dimen name="margin_text">20dp</dimen>
     <dimen name="margin_card_word">50dp</dimen>
     <dimen name="margin_top_description">20dp</dimen>
     <dimen name="margin_bottom_description">60dp</dimen>
@@ -68,5 +68,25 @@
     <dimen name="width_base">0dp</dimen>
     <dimen name="height_base">0dp</dimen>
     <dimen name="margin_right_card_word">20dp</dimen>
+    <dimen name="card_padding_level">60dp</dimen>
+    <dimen name="margin_top_title_level">20dp</dimen>
+    <dimen name="height_or_level">28dp</dimen>
+    <dimen name="padding_card_level">20dp</dimen>
+    <dimen name="height_button_level">40dp</dimen>
+    <dimen name="text_size_level_description">14sp</dimen>
+    <dimen name="margin_top_description_level">5dp</dimen>
+    <dimen name="margin_right_number_picker">40dp</dimen>
+    <dimen name="button_width_count_word">200dp</dimen>
+    <dimen name="button_size_clock">100dp</dimen>
+    <dimen name="page_indicator_padding">10dp</dimen>
+    <dimen name="page_indicator_radius">4dp</dimen>
+    <dimen name="padding_card_welcome">1dp</dimen>
+    <dimen name="margin_top_card_welcome">20dp</dimen>
+    <dimen name="size_card_title">16sp</dimen>
+    <dimen name="size_card_description">12sp</dimen>
+    <dimen name="relative_layout_size">40dp</dimen>
+    <dimen name="button_size_welcome">20dp</dimen>
+    <dimen name="text_view_width_card_translation">50dp</dimen>
+    <dimen name="text_view_height_card_translation">18dp</dimen>
 
 </resources>

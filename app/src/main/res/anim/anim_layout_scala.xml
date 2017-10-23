@@ -9,5 +9,5 @@
         android:scaleGravity="center_horizontal"
         android:scaleHeight="100%"
         android:toXScale="1"
-        android:toYScale="0" />
+        android:toYScale="2" />
 </set>

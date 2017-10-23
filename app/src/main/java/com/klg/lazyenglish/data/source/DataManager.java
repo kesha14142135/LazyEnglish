@@ -1,6 +1,9 @@
 package com.klg.lazyenglish.data.source;
 
+import com.klg.lazyenglish.data.model.Level;
 import com.klg.lazyenglish.util.Setting;
+
+import java.util.List;
 
 public interface DataManager {
 
@@ -20,6 +23,8 @@ public interface DataManager {
 
     void downloadWords(Callback callback);
 
+    int getCountShowVideo();
+
     interface Callback {
 
         void onSuccess();
@@ -28,4 +33,6 @@ public interface DataManager {
     }
 
     int getDownloadWords();
+
+    List<Level> getLevelsFromDb();
 }

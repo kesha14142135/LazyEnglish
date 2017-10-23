@@ -7,6 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.ViewGroup;
 
 import com.klg.lazyenglish.data.model.Level;
+import com.klg.lazyenglish.ui.settings.level.adapter.card.CardFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,13 +29,13 @@ public class CardFragmentPagerAdapter extends FragmentStatePagerAdapter implemen
     }
 
     @Override
-    public float getmBaseElevation() {
+    public float getBaseElevation() {
         return mBaseElevation;
     }
 
     @Override
     public CardView getCardView(int position) {
-        return mFragments.get(position).getmCardView();
+        return mFragments.get(position).getCardView();
     }
 
     @Override
@@ -54,7 +55,7 @@ public class CardFragmentPagerAdapter extends FragmentStatePagerAdapter implemen
         return fragment;
     }
 
-    public void addCardFragment(CardFragment fragment) {
+    private void addCardFragment(CardFragment fragment) {
         mFragments.add(fragment);
     }
 

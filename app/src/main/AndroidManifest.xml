@@ -24,11 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.welcome.WelcomeActivity" />
+        <activity
+            android:name=".ui.welcome.WelcomeActivity"
+            android:noHistory="true" />
         <activity android:name=".ui.settings.level.LevelActivity" />
         <activity android:name=".ui.settings.number.WordsActivity" />
         <activity android:name=".ui.settings.time.TimeActivity" />
-        <activity android:name=".ui.settings.download.DownloadActivity"></activity>
+        <activity android:name=".ui.settings.download.DownloadActivity" />
+        <activity android:name=".ui.video.VideoActivity" />
     </application>
 
 </manifest>

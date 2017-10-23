@@ -1,0 +1,67 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout_time_learn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFontWelcome"
+    tools:context="com.klg.lazyenglish.ui.settings.time.TimeFragment">
+
+    <TextView
+        android:id="@+id/text_view_title_time"
+        style="@style/TextViewSetting"
+        android:text="@string/time_title"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_horizontal"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_line_horizontal"
+        style="@style/GuidelineWelcome"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <TextView
+        android:id="@+id/text_view_time"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/clock"
+        android:textColor="@color/colorWhite"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_add_clock"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guide_line_horizontal" />
+
+    <Button
+        android:id="@+id/button_add_clock"
+        android:layout_width="@dimen/button_size_clock"
+        android:layout_height="@dimen/button_size_clock"
+        android:background="@drawable/ic_add_time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guide_line_horizontal" />
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTurquoise"
+        android:text="@string/next_setting"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/button_skip"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/button_skip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTurquoise"
+        android:text="@string/setting_skip"
+        android:textColor="@color/colorText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button_next" />
+</android.support.constraint.ConstraintLayout>

@@ -70,7 +70,7 @@ public class PreferenceAppHelper implements PreferenceHelper {
     @Override
     public void setStepSettings(int setting) {
         SharedPreferences.Editor editor = mPreference.edit();
-        editor.putInt(PrefConstants.STEP, 0);
+        editor.putInt(PrefConstants.STEP, setting);
         editor.apply();
     }
 

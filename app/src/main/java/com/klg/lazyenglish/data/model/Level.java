@@ -9,9 +9,11 @@ import android.os.Parcelable;
 
 public class Level implements Parcelable {
 
+    private int mId;
     private String mName;
-    private String mDescription;
-    private int mFlag;
+    private int mCountWords;
+    private int mIndex;
+    private int mCountVideo;
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public Level createFromParcel(Parcel in) {
@@ -23,16 +25,20 @@ public class Level implements Parcelable {
         }
     };
 
-    public Level(String name, String description, int flag) {
+    public Level(int id, String name, int countWords, int index, int countVideo) {
+        mId = id;
         mName = name;
-        mDescription = description;
-        mFlag = flag;
+        mCountWords = countWords;
+        mIndex = index;
+        mCountVideo = countVideo;
     }
 
     public Level(Parcel in) {
+        mId = in.readInt();
+        mCountVideo = in.readInt();
         mName = in.readString();
-        mDescription = in.readString();
-        mFlag = in.readInt();
+        mCountWords = in.readInt();
+        mIndex = in.readInt();
     }
 
     public String getName() {
@@ -43,20 +49,20 @@ public class Level implements Parcelable {
         mName = name;
     }
 
-    public String getDescription() {
-        return mDescription;
+    public int getCountWords() {
+        return mCountWords;
     }
 
-    public void setDescription(String description) {
-        mDescription = description;
+    public void setCountWords(int countWords) {
+        mCountWords = countWords;
     }
 
-    public int isFlag() {
-        return mFlag;
+    public int getIndex() {
+        return mIndex;
     }
 
-    public void setFlag(int flag) {
-        mFlag = flag;
+    public void setIndex(int flag) {
+        mIndex = flag;
     }
 
     @Override
@@ -66,8 +72,26 @@ public class Level implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(mId);
+        parcel.writeInt(mCountVideo);
         parcel.writeString(mName);
-        parcel.writeString(mDescription);
-        parcel.writeInt(mFlag);
+        parcel.writeInt(mCountWords);
+        parcel.writeInt(mIndex);
+    }
+
+    public int getId() {
+        return mId;
+    }
+
+    public void setId(int id) {
+        mId = id;
+    }
+
+    public int getCountVideo() {
+        return mCountVideo;
+    }
+
+    public void setCountVideo(int countVideo) {
+        mCountVideo = countVideo;
     }
 }

@@ -12,12 +12,10 @@ public interface WelcomeContract {
     interface View extends BaseView<WelcomeContract.Presenter> {
 
         void openSettingsActivity();
-
     }
 
     interface Presenter extends BasePresenter {
 
         void addWelcomeDone();
-
     }
 }

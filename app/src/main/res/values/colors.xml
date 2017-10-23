@@ -35,4 +35,7 @@
 
     <color name="colorText">#000000</color>
     <color name="colorCardView">#2f2f2e</color>
+    <color name="colorTurquoise">#06fae6</color>
+    <color name="colorGrey">#676767</color>
+    <color name="colorBlack">#000000</color>
 </resources>

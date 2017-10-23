@@ -31,6 +31,7 @@ public class DownloadFragment extends Fragment implements DownloadContract.View,
     private Button mButtonRepeatDownload;
     private ConstraintLayout mBaseLayout;
     private RelativeLayout mRelativeLayoutFont;
+    private RelativeLayout mRelativeLayoutFontBottom;
     private ImageView mImageViewMind;
     private Animation mAnimation;
 
@@ -61,6 +62,7 @@ public class DownloadFragment extends Fragment implements DownloadContract.View,
         mButtonRepeatDownload.setOnClickListener(this);
         mBaseLayout = view.findViewById(R.id.constraint_layout_download);
         mRelativeLayoutFont = view.findViewById(R.id.relative_layout_font);
+        mRelativeLayoutFontBottom = view.findViewById(R.id.relative_layout_font_bottom);
         mImageViewMind = view.findViewById(R.id.image_view_mind);
     }
 
@@ -115,7 +117,7 @@ public class DownloadFragment extends Fragment implements DownloadContract.View,
 
     @Override
     public void onAnimationEnd(Animation animation) {
-        mRelativeLayoutFont.setVisibility(View.GONE);
+        mRelativeLayoutFontBottom.setVisibility(View.VISIBLE);
         mPresenter.downloadWords();
     }
 

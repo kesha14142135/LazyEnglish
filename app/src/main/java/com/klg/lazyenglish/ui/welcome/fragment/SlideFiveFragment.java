@@ -12,21 +12,28 @@ import android.widget.ImageView;
 
 import com.klg.lazyenglish.R;
 
-public class SlideFiveFragment extends Fragment {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    //ui
-    private ImageView mImageViewFlag;
-    //element
+public class SlideFiveFragment extends Fragment implements Animation.AnimationListener {
+
+    //ui element
+    @BindView(R.id.image_view_flag)
+    ImageView mImageViewFlag;
+    //component
     private Context mContext;
-    private Animation mAnimation;
+    private Animation mAnimationRight;
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
-            mAnimation = AnimationUtils.loadAnimation(mContext,
-                    R.anim.anim_image_rotate_flag);
-            mImageViewFlag.startAnimation(mAnimation);
+            if (mAnimationRight == null) {
+                mAnimationRight = AnimationUtils.loadAnimation(mContext,
+                        R.anim.anim_image_rotate_flag);
+                mAnimationRight.setAnimationListener(this);
+            }
+            mImageViewFlag.startAnimation(mAnimationRight);
         }
     }
 
@@ -43,15 +50,15 @@ public class SlideFiveFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_slide_five, container, false);
-        mImageViewFlag = view.findViewById(R.id.image_view_flag);
+        ButterKnife.bind(this, view);
         return view;
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (mAnimation != null) {
-            mAnimation.cancel();
+        if (mImageViewFlag.getAnimation() != null) {
+            mImageViewFlag.clearAnimation();
         }
     }
 
@@ -64,5 +71,18 @@ public class SlideFiveFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+    }
+
+    @Override
+    public void onAnimationStart(Animation animation) {
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+        mImageViewFlag.startAnimation(animation);
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
     }
 }

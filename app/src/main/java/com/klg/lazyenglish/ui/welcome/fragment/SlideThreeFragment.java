@@ -13,12 +13,17 @@ import android.widget.ImageView;
 
 import com.klg.lazyenglish.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class SlideThreeFragment extends Fragment {
 
-    //ui
-    private ImageView mImageViewFinger;
-    private ImageView mImageViewDog;
-    //element
+    //ui element
+    @BindView(R.id.image_view_finger)
+    ImageView mImageViewFinger;
+    @BindView(R.id.image_view_dog)
+    ImageView mImageViewDog;
+    //component
     private Context mContext;
     private Animation mAnimation;
     private Animation mAnimationDog;
@@ -31,10 +36,12 @@ public class SlideThreeFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
-            mAnimationDog = AnimationUtils.loadAnimation(mContext,
-                    R.anim.anim_image_visible_next_screen);
+            if (mAnimation == null || mAnimationDog == null)
+                mAnimationDog = AnimationUtils.loadAnimation(mContext,
+                        R.anim.anim_image_visible_next_screen);
             mAnimation = AnimationUtils.loadAnimation(mContext,
                     R.anim.anim_image_move_left);
+
             mImageViewFinger.startAnimation(mAnimation);
             mImageViewDog.setVisibility(View.VISIBLE);
             mImageViewDog.startAnimation(mAnimationDog);
@@ -51,8 +58,7 @@ public class SlideThreeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_slide_three, container, false);
-        mImageViewFinger = view.findViewById(R.id.image_view_finger);
-        mImageViewDog = view.findViewById(R.id.image_view_dog);
+        ButterKnife.bind(this, view);
         mImageViewDog.setVisibility(View.INVISIBLE);
         return view;
     }
@@ -60,9 +66,10 @@ public class SlideThreeFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        if (mAnimation != null) {
-            mAnimation.cancel();
-            mAnimationDog.cancel();
+        if (mImageViewDog.getAnimation() == null &&
+                mImageViewDog.getAnimation() == null) {
+            mImageViewDog.clearAnimation();
+            mImageViewFinger.clearAnimation();
         }
     }
 

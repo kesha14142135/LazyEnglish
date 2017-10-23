@@ -18,7 +18,7 @@ public class WordsPresenter implements WordsContract.Presenter {
     public WordsPresenter(WordsContract.View view, Context context) {
         mView = view;
         mManager = AppDataManager.getInstance(context);
-
+        mView.setPresenter(this);
     }
 
     @Override

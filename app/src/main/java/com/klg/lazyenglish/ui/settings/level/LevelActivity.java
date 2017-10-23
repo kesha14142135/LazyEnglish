@@ -4,24 +4,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.klg.lazyenglish.R;
-import com.klg.lazyenglish.ui.home.HomeFragment;
-import com.klg.lazyenglish.ui.home.HomePresenter;
+import com.klg.lazyenglish.data.model.Level;
+import com.klg.lazyenglish.ui.settings.level.adapter.CallBackLevel;
 import com.klg.lazyenglish.util.ActivityUtils;
 
-public class LevelActivity extends AppCompatActivity {
+public class LevelActivity extends AppCompatActivity implements CallBackLevel {
+    private LevelFragment mLevelFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_knowledge);
 
-        LevelFragment levelFragment = (LevelFragment) getSupportFragmentManager()
+        mLevelFragment = (LevelFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.constraint_layout_level_base);
-        if (levelFragment == null) {
-            levelFragment = LevelFragment.newInstance();
+        if (mLevelFragment == null) {
+            mLevelFragment = LevelFragment.newInstance();
             ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),
-                    levelFragment, R.id.constraint_layout_level_base);
+                    mLevelFragment, R.id.constraint_layout_level_base);
         }
-        new LevelPresenter(levelFragment, this);
+        new LevelPresenter(mLevelFragment, this);
+    }
+
+    @Override
+    public void showVideo(Level level) {
+        mLevelFragment.showVideo(level);
+    }
+
+    @Override
+    public void showNextScreen(Level level) {
+        mLevelFragment.showNextScreen(level);
     }
 }

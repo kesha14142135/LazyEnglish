@@ -6,7 +6,7 @@ public interface CardAdapter {
 
     int MAX_ELEVATION_FACTOR = 8;
 
-    float getmBaseElevation();
+    float getBaseElevation();
 
     CardView getCardView(int position);
 

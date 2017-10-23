@@ -1,48 +1,61 @@
 <resources>
+    <!-- app name -->
     <string name="app_name">Lazy English</string>
-    <string name="dummy_text">text</string>
-    <string name="view_swiped_right">Right</string>
-    <string name="view_swiped_left">Left</string>
-    <string name="stack_empty">Empty</string>
 
-    <string name="title_activity_welcome">Home Screen</string>
+    <!-- home button -->
+    <string name="learn_rus_word">Learn rus words</string>
+    <string name="learn_eng_words">Learn eng words</string>
+
+    <!-- welcome text -->
+    <string name="splash_one">Меня зовут Emmy и я подскажу тебе, как пользоваться этим приложением!</string>
+    <string name="splash_two">Тебе предстоит изучить все карточки с ангийскими словами</string>
+    <string name="splash_three">Если ты еще не выучил слово и хочешь его повторить, то перетащи карточку влево!</string>
+    <string name="splash_four">Смело перетаскивай карточку вправо, елси выучил слово и не боишься егоперепутать с другим!</string>
+    <string name="splash_five">Давай попробуем начать! Для начала, мне нужно узнать о тебе кое что важное!</string>
+
+    <!-- welcome card -->
+    <string name="welcome_word">Dog</string>
+    <string name="welcome_transcription_word">[dog]</string>
+    <string name="welcome_translate_word">Перевод</string>
+
+    <!--  welcome menu-->
     <string name="next">Давай далее</string>
     <string name="skip">Сам(а) разберусь</string>
     <string name="start">Начать</string>
-    <string name="slide_1_title">Daily Workout</string>
-    <string name="slide_1_desc">Set your daily workout routine by the help of trainer</string>
-    <string name="slide_2_title">Meditation Techniques </string>
-    <string name="slide_2_desc">Learn about the different meditation techniques and practice them</string>
-    <string name="slide_3_title">Diet Chart</string>
-    <string name="slide_3_desc">Make your diet chart by the help of health experts</string>
-    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
-    <string name="play_again">Play Again</string>
-    <string name="slide_screen_one">Slide screen one</string>
-    <string name="slide_screen_two">Slide screen two</string>
-    <string name="slide_screen_three">Slide screen three</string>
-    <string name="slide_screen_four">Slide screen four</string>
-    <string name="slide_screen_five">Slide screen five</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="word">Word</string>
-    <string name="transcription">Transcription</string>
-    <string name="translate">Перевод</string>
+    <!-- setting title -->
+    <string name="screen_download_title">Подождите идет загрузка данных</string>
+    <string name="level_title">Укажите свой уровень английского языка</string>
+    <string name="count_word_title">Укажите количество англиких слов для изучения</string>
+    <string name="time_title">Выберете время когда вам будет удобно повторять слова</string>
+
+    <!-- setting download -->
+    <string name="error_download">Попробуйте повторить загрузку данных</string>
+    <string name="error_internet">Проверте подключение к интенету</string>
+    <string name="restart_download">Повторить попытку</string>
+
+    <!-- setting level -->
+    <string name="description_level">Для открытия новых слов необходимо изучить все слова предыдущем уровне</string>
+    <string name="description_video_level">Посмотри видео что бы пропустить изучение 100 слов в предыдущем уровне</string>
+    <string name="description_level_word">Вы изучете более %d слов</string>
+    <string name="or">или</string>
+    <string name="button_show_video">Посмотреть видео</string>
+    <string name="button_used">Использовать</string>
+
+    <!-- setting count words -->
+    <string name="number_picker_formatter">%02d</string>
+    <string name="next_setting">Далее</string>
+
+    <!-- setting time -->
+    <string name="setting_skip">Пропустить</string>
+    <string name="clock">00:00</string>
+    <string name="format_time">%d:%02d</string>
+
+    <!-- do not translate -->
+    <!-- home screen swipe -->
     <string name="left_swipe">Left</string>
     <string name="right_swipe">Right</string>
-    <string name="learn_rus_word">Learn rus words</string>
-    <string name="learn_eng_words">Learn eng words</string>
-    <string name="count_word">Укажите свой уровень англикого языка</string>
-    <string name="setting_time">Time learned</string>
-    <string name="splash_one">Меня зовут Emmy и я подскажу тебе, как пользоваться этим приложением!</string>
-    <string name="splash_two">Тебе предстоит изучить все карточки с ангийскими словами</string>
-    <string name="splash_three">Еслиты еще не выучил слово и хочешь его повторить, то перетащи карточку влево!</string>
-    <string name="splash_four">Смело перетаскивай карточку вправо, елси выучил слово и не боишься егоперепутать с другим!</string>
-    <string name="splash_five">Давай попробуем начать! Для начала, мне нужно узнать о тебе кое что важное!</string>
-    <string name="dog">Dog</string>
-    <string name="transcription_dog">[dog]</string>
-    <string name="screen_download">Зачекайте йде завантаження данных.</string>
-    <string name="restart_download">Повторить попытку</string>
-    <string name="lorem_ipsum">Description</string>
-    <string name="used">Использовать</string>
-    <string name="buy">Купить</string>
+    <string name="level_send">level_send</string>
+    <!-- do not translate end -->
+
 </resources>

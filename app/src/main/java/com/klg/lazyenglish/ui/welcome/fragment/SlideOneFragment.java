@@ -12,10 +12,15 @@ import android.widget.ImageView;
 
 import com.klg.lazyenglish.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class SlideOneFragment extends Fragment {
-
-    private ImageView mImageViewMind;
+    //ui element
+    @BindView(R.id.image_view_mind)
+    ImageView mImageViewMind;
+    //component
     private Context mContext;
     private Animation mAnimation;
 
@@ -32,9 +37,11 @@ public class SlideOneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_slide_one, container, false);
-        mImageViewMind = view.findViewById(R.id.image_view_mind);
-        mAnimation = AnimationUtils.loadAnimation(mContext,
-                R.anim.anim_image_visible);
+        ButterKnife.bind(this, view);
+        if (mAnimation == null) {
+            mAnimation = AnimationUtils.loadAnimation(mContext,
+                    R.anim.anim_image_visible);
+        }
         mImageViewMind.startAnimation(mAnimation);
         return view;
     }
@@ -42,8 +49,8 @@ public class SlideOneFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        if (mAnimation != null) {
-            mAnimation.cancel();
+        if (mImageViewMind.getAnimation() != null) {
+            mImageViewMind.clearAnimation();
         }
     }
 

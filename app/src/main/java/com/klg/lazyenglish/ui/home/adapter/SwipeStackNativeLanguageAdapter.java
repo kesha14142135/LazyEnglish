@@ -47,7 +47,7 @@ public class SwipeStackNativeLanguageAdapter extends ArrayAdapter<Word> {
         holder.mRelativeLayout.setBackgroundColor(
                 mColors[word.getType()]);
         holder.mTextViewWord.setText(word.getWordRus());
-        holder.mTextViewHint.setText(mContext.getString(R.string.translate));
+        holder.mTextViewHint.setText(mContext.getString(R.string.welcome_translate_word));
         holder.mImageViewHint.setImageBitmap(null);
         holder.mButtonShowHintImage.setVisibility(View.VISIBLE);
         holder.mTextViewHint.setOnClickListener(view ->

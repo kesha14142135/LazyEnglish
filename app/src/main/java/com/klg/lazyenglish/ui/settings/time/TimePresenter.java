@@ -14,10 +14,12 @@ public class TimePresenter implements TimeContract.Presenter {
 
     private TimeContract.View mView;
     private DataManager mManager;
+    private static final int TIME = -1;
 
 
     public TimePresenter(TimeContract.View view, Context context) {
         mView = view;
+        view.setPresenter(this);
         mManager = AppDataManager.getInstance(context);
     }
 
@@ -32,8 +34,13 @@ public class TimePresenter implements TimeContract.Presenter {
     }
 
     @Override
-    public void writeTime(int time) {
-        mManager.addSetting(time, Setting.TIME);
+    public void writeTime(int hour, int minute) {
+        mManager.addSetting(hour, Setting.TIME);
         mView.nextScreen();
+    }
+
+    @Override
+    public void writeTimeSetting() {
+        mManager.addSetting(TIME, Setting.TIME);
     }
 }

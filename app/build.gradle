@@ -40,8 +40,22 @@ dependencies {
         //text to speech
         compile 'net.gotev:speech:1.3.1'
 
+        //butter knife
+        compile 'com.jakewharton:butterknife:8.8.1'
+        annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+        //out of memory error
+        debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+        releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
         //carousel
         compile 'com.github.Vatican-Cameos:CarouselPicker:v1.0'
+
+        //time picker
+        compile 'net.codecrafted:lineartimepicker:1.0.0'
+
+        //number picker
+        compile 'com.shawnlin:number-picker:2.4.4'
 
         //ui
         compile 'com.android.support:cardview-v7:26.1.0'
@@ -66,6 +80,9 @@ dependencies {
         // reactive
         compile "io.reactivex.rxjava2:rxjava:2.1.3"
         compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+        //calligraphy
+        compile 'uk.co.chrisjenx:calligraphy:2.3.0'
 
         //retrofit
         compile 'com.squareup.retrofit2:retrofit:2.3.0'

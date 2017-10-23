@@ -2,6 +2,9 @@ package com.klg.lazyenglish.ui.settings.level;
 
 import com.klg.lazyenglish.base.BasePresenter;
 import com.klg.lazyenglish.base.BaseView;
+import com.klg.lazyenglish.data.model.Level;
+
+import java.util.List;
 
 
 /**
@@ -10,11 +13,15 @@ import com.klg.lazyenglish.base.BaseView;
 
 public interface LevelContract {
     interface View extends BaseView<LevelContract.Presenter> {
+
         void nextScreen();
 
     }
 
     interface Presenter extends BasePresenter {
-        void writeLevel(int level);
+
+        void writeLevel(Level level);
+
+        List<Level> getLevels();
     }
 }

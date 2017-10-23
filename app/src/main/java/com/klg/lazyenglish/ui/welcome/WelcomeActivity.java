@@ -8,62 +8,50 @@ import android.view.View;
 import android.widget.Button;
 
 import com.klg.lazyenglish.R;
-import com.klg.lazyenglish.ui.home.HomeActivity;
 import com.klg.lazyenglish.ui.settings.download.DownloadActivity;
 import com.klg.lazyenglish.ui.welcome.adapter.WelcomePagerAdapter;
 import com.merhold.extensiblepageindicator.ExtensiblePageIndicator;
 
-public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener, WelcomeContract.View {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
+public class WelcomeActivity extends AppCompatActivity implements WelcomeContract.View, ViewPager.OnPageChangeListener {
+    //ui element
+    @BindView(R.id.button_skip)
+    Button mButtonSkip;
+    @BindView(R.id.button_next)
+    Button mButtonNext;
+    @BindView(R.id.view_pager)
+    ViewPager mViewPager;
+    //component
     private WelcomeContract.Presenter mPresenter;
-    private Button mButtonSkip, mButtonNext;
-    private ViewPager mViewPager;
     private final int COUNT_PAGE = 5;
+    private final int STEP = 1;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcom);
+        ButterKnife.bind(this);
         mPresenter = new WelcomePresenter(this, this);
         updateViewDependencies();
-
     }
 
-    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
-
-        @Override
-        public void onPageSelected(int position) {
-            if (position == COUNT_PAGE - 1) {
-                mButtonNext.setText(getString(R.string.start));
-                mButtonSkip.setVisibility(View.GONE);
-            } else {
-                mButtonNext.setText(getString(R.string.next));
-                mButtonSkip.setVisibility(View.VISIBLE);
-            }
+    @OnClick(R.id.button_next)
+    public void onClickNext(View view) {
+        int current = getItem(+STEP);
+        if (current < COUNT_PAGE) {
+            mViewPager.setCurrentItem(current);
+        } else {
+            mPresenter.addWelcomeDone();
         }
+    }
 
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-        }
-    };
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.button_next: {
-                nextScreen();
-                break;
-            }
-            case R.id.button_skip: {
-                openSettingsActivity();
-                break;
-            }
-        }
+    @OnClick(R.id.button_skip)
+    public void onClickSkip(View view) {
+        mPresenter.addWelcomeDone();
     }
 
     @Override
@@ -77,31 +65,41 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         finish();
     }
 
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        pageSelected(position);
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
     private void updateViewDependencies() {
         WelcomePagerAdapter welcomePagerAdapter;
-        mViewPager = findViewById(R.id.view_pager);
-        mButtonSkip = findViewById(R.id.button_skip);
-        mButtonNext = findViewById(R.id.button_next);
         welcomePagerAdapter = new WelcomePagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(welcomePagerAdapter);
-        mViewPager.addOnPageChangeListener(viewPagerPageChangeListener);
-        mButtonSkip.setOnClickListener(this);
-        mButtonNext.setOnClickListener(this);
+        mViewPager.addOnPageChangeListener(this);
         ExtensiblePageIndicator pagerIndicator = findViewById(R.id.page_indicator);
         pagerIndicator.initViewPager(mViewPager);
-
     }
 
     private int getItem(int i) {
         return mViewPager.getCurrentItem() + i;
     }
 
-    private void nextScreen() {
-        int current = getItem(+1);
-        if (current < COUNT_PAGE) {
-            mViewPager.setCurrentItem(current);
+    private void pageSelected(int position) {
+        if (position == COUNT_PAGE - STEP) {
+            mButtonNext.setText(getString(R.string.start));
+            mButtonSkip.setVisibility(View.GONE);
         } else {
-            mPresenter.addWelcomeDone();
+            mButtonNext.setText(getString(R.string.next));
+            mButtonSkip.setVisibility(View.VISIBLE);
         }
     }
 }

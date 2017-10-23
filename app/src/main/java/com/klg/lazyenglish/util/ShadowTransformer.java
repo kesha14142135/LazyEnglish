@@ -1,8 +1,10 @@
-package com.klg.lazyenglish.ui.settings.level.adapter;
+package com.klg.lazyenglish.util;
 
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
 import android.view.View;
+
+import com.klg.lazyenglish.ui.settings.level.adapter.CardAdapter;
 
 public class ShadowTransformer implements ViewPager.OnPageChangeListener, ViewPager.PageTransformer {
 
@@ -43,7 +45,7 @@ public class ShadowTransformer implements ViewPager.OnPageChangeListener, ViewPa
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         int realCurrentPosition;
         int nextPosition;
-        float baseElevation = cardAdapter.getmBaseElevation();
+        float baseElevation = cardAdapter.getBaseElevation();
         float realOffset;
         boolean goingLeft = lastOffset > positionOffset;
 
